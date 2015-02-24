@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+goodman = Actor.create(:name => "John Goodman")
+
+lebowski = Movie.create(:title => "the big lebowski", :year => 1998)
+
+lebowski.actors << goodman

@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
 
+  resources :actors
+
   resources :movies
+
+  # from Tim's code
+  post '/movies/:id/actors/new' => 'movies#add_actor', as: :add_actor
+  delete 'movies/:id/actors/:actor_id' => 'movies#remove_actor', as: :remove_actor
+
+  post '/actors/:id/movies/new' => 'actors#add_movie', as: :add_movie
+  delete '/actors/:id/movies/:movie_id' => 'actors#remove_movie', as: :remove_movie
+
+  root 'site#index'
+
+  # resources :movies do
+  #   resources :reviews, shallow: true
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
