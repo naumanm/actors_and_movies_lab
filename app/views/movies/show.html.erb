@@ -20,6 +20,12 @@
   <% end %>
 </div>
 
+<ul id="comments">
+  <% @comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
+
 <%= link_to "Edit", edit_movie_path(@movie) %>
 <%= button_to "Delete", movie_path(@movie), :method => :delete %>
 <br><br>

@@ -18,6 +18,12 @@
   <% end %>
 </div>
 
+<ul id="comments">
+  <% @comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
+
 <%= link_to "Edit", edit_actor_path(@actor) %>
 <%= button_to "Delete", actor_path(@actor), :method => :delete %>
 <br><br>

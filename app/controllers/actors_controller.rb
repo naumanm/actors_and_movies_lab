@@ -20,6 +20,7 @@ class ActorsController < ApplicationController
 
   def show
     @movies = Movie.all - @actor.movies
+    @comments = @actor.comments
   end
 
   def update
@@ -59,4 +60,6 @@ class ActorsController < ApplicationController
   def find_actor
     @actor = Actor.find(params[:id])
   end
+
+
 end
